@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JS/echarts.min.js"></script>
+    <script src="JS/wonderland.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 1500px;height:400px;position: absolute;left: 10px;top: 50px"></div>
+    <script type="text/javascript">
+      var myChart = echarts.init(document.getElementById('main'),'wonderland');
+      var option = {
+        title: {
+          text: '00会参加哪些公益活动',
+          top:50,
+          subtext:'00后在社会事务方面表现出了极高的参与度，且关注维度丰富，\n既会帮扶弱势群体，也会关注绿色环保，同时他们也敢于发声，\n会踊跃表达自己的观点。',
+          subtextStyle:{align: 'center',
+          lineHeight: 30},
+        },
+        tooltip: {},
+        legend: {
+          data: ['项目']
+        },
+       grid:{
+        left:400,
+        top:100,
+
+       },
+        xAxis: {
+          data: ['当志愿者', '为公益项目捐款', '采取低碳生活', '线上发声', '参加公益组织', '参与制作公益产品']
+        },
+        yAxis: {},
+        series: [
+          {
+            name: '百分比',
+            type: 'effectScatter',
+            data: [73.97, 72.72, 60.42, 46.01, 40.73, 33.81],
+            label:{
+
+                show:true,
+                color:'white',
+                fontSize:30,
+            },
+            rippleEffect:{
+                number:10,
+                scale:10,
+                brushType: "fill",
+            }
+
+          }
+        ]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+    </script>
+</body>
+</html>
